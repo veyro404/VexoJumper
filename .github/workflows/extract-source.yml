@@ -1,0 +1,34 @@
+
+name: Extract Source ZIP
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract source ZIP
+        run: |
+          mkdir -p extracted
+          unzip -o VexoJumper-bilingual-readme.zip -d extracted
+
+          cp -a extracted/VexoJumper/. .
+
+          rm -rf extracted
+          rm -f VexoJumper-bilingual-readme.zip
+
+      - name: Commit extracted source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Extract Vexo Jumper source files" || exit 0
+          git push
