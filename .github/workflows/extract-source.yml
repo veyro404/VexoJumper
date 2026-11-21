@@ -18,7 +18,7 @@ jobs:
       - name: Extract source ZIP
         run: |
           mkdir -p extracted
-          unzip -o VexoJumper-bilingual-readme.zip -d extracted
+          unzip -o VexoJumper.zip -d extracted
 
           cp -a extracted/VexoJumper/. .
 
