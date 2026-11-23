@@ -1,214 +1,177 @@
 <div align="center">
 
-# ⚡ Vexo Jumper
+# ⚡ Vexo Jumper VPN
 
-### Network management, made refreshingly simple.
+### Your VPN connection and everyday network tools. One focused workspace.
 
-**A modern, lightweight Windows desktop tool for network visibility and troubleshooting.**
+**A modern Persian-first Windows VPN client with sing-box, server health checks, DNS tools and practical diagnostics.**
+
+<p><a href="README.md">🇮🇷 فارسی</a> · <a href="README.en.md">🇬🇧 English</a></p>
 
 <p>
-  <a href="README.md">🇮🇷 فارسی</a>
-  &nbsp;•&nbsp;
-  <a href="README.en.md">🇬🇧 English</a>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.7.0-7C8CFF?style=for-the-badge">
+  <img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-1687F8?style=for-the-badge&logo=windows">
+  <img alt=".NET" src="https://img.shields.io/badge/.NET-10-512BD4?style=for-the-badge&logo=dotnet">
+  <img alt="Architecture" src="https://img.shields.io/badge/architecture-x64-17B890?style=for-the-badge">
 </p>
 
 <p>
-  <a href="https://github.com/veyro404/VexoJumper/releases/latest">
-    <img alt="Latest Release" src="https://img.shields.io/github/v/release/veyro404/VexoJumper?style=for-the-badge&color=6C8CFF&label=release">
-  </a>
-  <a href="https://github.com/veyro404/VexoJumper/releases">
-    <img alt="Downloads" src="https://img.shields.io/github/downloads/veyro404/VexoJumper/total?style=for-the-badge&color=19BFA5&label=downloads">
-  </a>
-  <img alt="Platform" src="https://img.shields.io/badge/Windows-10%20%2F%2011-1687F8?style=for-the-badge&logo=windows">
-  <img alt=".NET" src="https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet">
+  <a href="https://github.com/veyro404/VexoJumper/releases/latest"><strong>⬇️ Download latest release</strong></a> ·
+  <a href="https://veyro404.github.io/VexoJumper/"><strong>🌐 Project website</strong></a> ·
+  <a href="https://github.com/veyro404/VexoJumper/issues"><strong>🐛 Report an issue</strong></a>
 </p>
 
-<p>
-  <a href="https://github.com/veyro404/VexoJumper/releases/latest">
-    <strong>⬇️ Download Latest Release</strong>
-  </a>
-  &nbsp; · &nbsp;
-  <a href="https://veyro404.github.io/VexoJumper/">
-    <strong>🌐 Project Website</strong>
-  </a>
-  &nbsp; · &nbsp;
-  <a href="https://github.com/veyro404/VexoJumper/issues">
-    <strong>🐛 Report an Issue</strong>
-  </a>
-</p>
+</div>
 
 ---
 
-</div>
+## ✨ What is Vexo Jumper?
 
-## ✨ About Vexo Jumper
+Vexo Jumper VPN is a Windows desktop application that brings VPN connectivity and practical network tools into one interface. Check your connection, manage DNS, run diagnostics and monitor network activity without jumping between multiple utilities.
 
-Vexo Jumper is a Windows desktop application designed to make **network management and troubleshooting easier**. It brings practical network tools together in one clean, readable interface, so users do not have to navigate long adapter lists or switch between separate utilities.
+Version **1.7.0** includes a **sing-box**-based VPN tunnel, a project-managed configuration feed, server reachability ranking, real HTTPS tunnel verification, automatic recovery checks and an in-app update workflow.
 
-In version 1.2.0, the app identifies the IPv4 interface associated with the route selected by Windows, displays connection details, and provides tools such as Ping, DNS Lookup, traffic monitoring, and ready-to-use DNS profiles.
+> A clearer way to work with your connection—with useful status and diagnostics instead of guesswork.
 
-> **Less complexity. Essential network tools in one straightforward workspace.**
+## 🚀 Download & get started
 
-## 🚀 Download & Run
+### Prebuilt Windows release
 
-### Quick start — prebuilt release
+1. Open [GitHub Releases](https://github.com/veyro404/VexoJumper/releases/latest).
+2. Download the Windows ZIP from **Assets** and extract it. If a Setup installer is attached to the release, you can use the x64 installer instead.
+3. Run `VexoJumperVPN.exe`.
+4. Approve the Windows Administrator prompt required for VPN tunnel and network operations.
+5. Open the VPN page and press the central power control.
 
-1. Open the [Latest Releases](https://github.com/veyro404/VexoJumper/releases/latest) page.
-2. Download `VexoJumper-win-x64.zip` from **Assets**.
-3. Extract the ZIP archive to a folder.
-4. Run `VexoJumper.exe`.
-
-The release is published as a self-contained application, so a separate .NET Runtime installation is generally not required to run the release package. Administrator privileges may be required to change DNS settings.
+The published application is self-contained and does not require a separate .NET Runtime installation. On the first VPN connection, the app may download the sing-box engine and Wintun driver from their official sources. Internet access is therefore required for initial VPN setup.
 
 <div align="center">
-
-<a href="https://github.com/veyro404/VexoJumper/releases/latest">
-  <img src="https://img.shields.io/badge/Download%20Vexo%20Jumper-Latest%20Release-586FFF?style=for-the-badge&logo=windows&logoColor=white" alt="Download Vexo Jumper">
-</a>
-
+<a href="https://github.com/veyro404/VexoJumper/releases/latest"><img src="https://img.shields.io/badge/Download%20Vexo%20Jumper-Free%20on%20GitHub-596CFF?style=for-the-badge&logo=windows&logoColor=white" alt="Download Vexo Jumper"></a>
 </div>
 
-## 🧩 Features
+## 💎 Features
 
-| Feature | Description |
+### 🛡️ sing-box VPN client
+
+- Creates a Windows TUN tunnel using the sing-box engine.
+- The configuration parser handles common link formats including VLESS, VMess, Shadowsocks, Trojan, Hysteria2 and TUIC. Actual usability depends on the protocol details and completeness of each supplied configuration.
+- Retrieves server entries from the project's configuration-management service and keeps a local cache for fallback use.
+- Checks TCP reachability and ranks reachable servers by response time before attempting the top candidates.
+- Reports a successful connection only after the engine starts and an HTTPS request succeeds through the tunnel.
+- Monitors tunnel health and attempts automatic reconnection if the engine exits or the tunnel becomes unreachable.
+- Uses a Windows Job Object to help terminate the VPN child process if the app is forcibly closed.
+- Displays connection state, latency, traffic rates and connection duration.
+
+### 🌐 DNS & network management
+
+- Automatically identifies the network interface selected by the Windows route table.
+- Shows interface name, connection type, IPv4 address, gateway and configured DNS servers.
+- Provides selectable DNS profiles and editable primary/secondary DNS fields.
+- Applies DNS settings after user confirmation and can restore automatic DHCP DNS.
+- Shows response latency for built-in and custom DNS addresses on the Network page.
+- Includes Electro, Shecan, Begzar, Google Public DNS, Cloudflare, Quad9, OpenDNS, AdGuard, Safe DNS and NTT profiles.
+
+### 🧰 Diagnostics toolkit
+
+| Tool | What it does |
 |---|---|
-| 🧭 Automatic network detection | Identifies the IPv4 interface associated with the route selected by Windows, without requiring manual selection from a long adapter list |
-| 🌐 Connection details | Displays interface name, connection type, IPv4 address, gateway, and configured DNS servers |
-| 📡 Ping | Sends ICMP requests to an IP address or hostname and displays successful replies and average response time |
-| 🔎 DNS Lookup | Resolves host addresses using the DNS resolver configured in Windows |
-| ⚙️ DNS profiles | Quickly selects predefined DNS providers and fills primary and secondary addresses |
-| ↩️ Restore DNS | Allows the interface DNS configuration to be restored to automatic DHCP |
-| 📊 Traffic monitoring | Displays receive and send rates using Windows network interface counters |
-| 🎨 User interface | Dark, Persian, right-to-left interface with readable result cards and subtle animations |
+| Ping | Sends ICMP requests to a host or IP and reports response times |
+| DNS Lookup | Resolves a hostname using the DNS resolver configured in Windows |
+| Smart Diagnosis | Checks the active interface, gateway, internet reachability and DNS |
+| DNS Benchmark | Compares DNS response times on the current network |
+| Quick Fix | Runs selected Windows network repair actions, such as flushing DNS cache and resetting Winsock/IP |
+| Live Traffic Monitor | Displays receive/send rates and interface traffic counters |
+| Connection History | Records VPN, connection and network-operation events |
 
-## ⚡ Included DNS Profiles
+### ✨ User experience
 
-| Provider | Primary DNS | Secondary DNS |
-|---|---|---|
-| Electro | `78.157.42.100` | `78.157.42.101` |
-| Shecan | `178.22.122.100` | `185.51.200.2` |
-| Begzar | `185.55.226.26` | `185.55.225.25` |
-| Google Public DNS | `8.8.8.8` | `8.8.4.4` |
-| Cloudflare | `1.1.1.1` | `1.0.0.1` |
-| Quad9 | `9.9.9.9` | `149.112.112.112` |
-| OpenDNS | `208.67.222.222` | `208.67.220.220` |
-| AdGuard DNS | `94.140.14.14` | `94.140.15.15` |
-| Safe DNS | `195.46.39.39` | `195.46.39.40` |
-| NTT | `129.250.35.250` | `129.250.35.251` |
+- Dark, right-to-left Persian UI with glass-style panels and neon accents.
+- Animated central power control for disconnected, connecting and connected states.
+- System Tray operation with reopen, VPN disconnect and full-exit actions.
+- In-app updates with resumable downloads, SHA-256 verification and support for mandatory releases.
 
-Select a profile to populate the DNS fields, then confirm before applying the settings.
+## 🔄 Version 1.7.0 update workflow
 
-**Note:** DNS performance, availability, and filtering behavior vary by network and geographic location. A listed profile does not guarantee faster access, security, or availability of any particular website.
+The app checks the project's update service for newer releases. When an update is available, users can review its changelog and download it in-app. The downloaded package and executable are checked with SHA-256. The updater stages the new executable, waits for the running app to exit, replaces the installed file and attempts rollback if replacement fails. The service can also mark a release as mandatory.
 
 ## 🖥️ Requirements
 
 | Item | Requirement |
 |---|---|
 | Operating system | Windows 10 or Windows 11 |
-| Current release architecture | Windows x64 (`win-x64`) |
-| Development framework | .NET 10 |
-| UI framework | WPF |
-| Administrator access | May be required to apply DNS changes |
+| Main release architecture | x64 |
+| Framework | .NET 10 / WPF |
+| Permissions | Administrator for VPN tunnel and selected network operations |
+| Internet | Required for initial engine/driver download, server feed and update checks |
 
-## 🛠️ Build from Source
+## 🧱 Build from source
 
-### 1. Clone the repository
+Prerequisite: Windows and **.NET SDK 10.0.404** (the SDK version expected by the build script).
 
 ```powershell
 git clone https://github.com/veyro404/VexoJumper.git
 cd VexoJumper
-```
-
-### 2. Check your development environment
-
-Build on Windows with the .NET 10 SDK. The current build script expects SDK version `10.0.404`.
-
-```powershell
-dotnet --info
-```
-
-### 3. Build and publish
-
-The PowerShell script restores dependencies, builds Release with warnings treated as errors, and publishes a self-contained Windows x64 application:
-
-```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force
-.\build-and-publish.ps1 -SkipRun
+.\build-and-publish.ps1 -Runtime win-x64 -SkipRun
 ```
 
-The published application is created at:
+The published executable is written to:
 
 ```text
-artifacts/win-x64/VexoJumper.exe
+artifacts\win-x64\VexoJumperVPN.exe
 ```
 
-To build without the helper script:
+The helper script restores dependencies, builds Release with warnings treated as errors, and publishes a self-contained single-file application. To create a Setup installer quickly, first publish the app and run:
 
 ```powershell
-dotnet restore .\VexoJumper.sln
-dotnet build .\VexoJumper.sln -c Release
+.\build-installer.ps1
 ```
 
-## 🧪 Current Scope & Limitations
+The helper locates Inno Setup 6 and creates `artifacts\installer\VexoJumperVPN-Setup-1.7.0-x64.exe`. You can also open `installer\VexoJumperVPN.iss` in Inno Setup Compiler and compile it manually.
 
-The following details help set accurate expectations:
-
-- Ping uses ICMP. Some destinations block ICMP requests.
-- DNS Lookup uses the resolver configured in Windows; it is not an independent benchmark of multiple DNS providers.
-- Traffic monitoring uses Windows network interface counters and may include LAN traffic. It may not match the traffic totals reported by an ISP.
-- Active interface detection uses the local address selected by Windows for a UDP route. On systems with multiple routes, VPNs, or custom policy routing, the result depends on the Windows routing table.
-- A real download/upload speed test server, jitter measurement, and packet-loss diagnostics are not implemented in the current version.
-- Traceroute, reverse DNS, TCP/TLS diagnostics, public IP lookup, per-process traffic breakdown, System Tray support, and a dedicated installer are outside the current release scope.
-- Changing DNS may require Administrator privileges. If the operation fails, run the app with appropriate permissions and try again.
-
-## 🔐 Security & Privacy
+## 🔐 Privacy & security notes
 
 - DNS changes require explicit user confirmation.
-- The application is designed to run normally with standard Windows privileges; Administrator access may be needed for privileged operations.
-- Network tools read the Windows network configuration and interface information required for their operation.
-- Review the source code and download releases only from the official repository.
+- Administrator access is required by the application manifest for VPN and privileged network operations.
+- Server configuration and update metadata are retrieved from the project's online services.
+- The engine and driver are downloaded from upstream sources; the Wintun archive is SHA-256 checked in code.
+- Operational and error logs are written under `%LOCALAPPDATA%\VexoJumper\logs`. Review logs for sensitive information before sharing them.
+- A VPN does not guarantee complete anonymity, device security, a specific speed or permanent access to any website. Performance and availability depend on the server, network, ISP and destination.
 
-## 🗺️ Roadmap
+## ⚠️ Scope & limitations
 
-The following are potential future improvements and are **not** claims about features available in the current release:
+- Ping relies on ICMP; some destinations block ICMP even when their services are reachable.
+- DNS latency and benchmark results are snapshots of the current network and can change over time.
+- Traffic rates use Windows network-interface counters and may include LAN traffic.
+- A successful TCP probe alone does not prove a working VPN. The app also checks HTTPS connectivity through the tunnel after startup.
+- Availability of servers supplied by the project's feed is outside the application's control.
+- DNS changes and Winsock/IP repair operations can temporarily interrupt connectivity and may require elevation.
 
-- [ ] Real download and upload speed testing
-- [ ] DNS provider latency comparison
-- [ ] Network usage charts and history
-- [ ] Traceroute and route diagnostics
-- [ ] Public IP information
-- [ ] Windows installer
-- [ ] Automatic updates
-- [ ] Automated builds with GitHub Actions
+## 🧩 Repository layout
 
-## 🤝 Contributing & Bug Reports
+```text
+VexoJumper/
+├─ src/VexoJumper/       # WPF application source
+├─ docs/                 # Documentation and release notes
+├─ installer/            # Inno Setup script
+├─ index.html            # Project landing page
+├─ README.md             # Persian documentation
+├─ README.en.md          # English documentation
+├─ CHANGELOG.md          # Release history
+└─ build-and-publish.ps1 # Windows build and publish helper
+```
 
-Suggestions, bug reports, and contributions are welcome.
+## 🤝 Issues & contributions
 
-1. Check [Issues](https://github.com/veyro404/VexoJumper/issues) for existing reports.
-2. When reporting a bug, include your Windows version, reproduction steps, and the exact error message.
-3. For larger changes, open an Issue first so the approach can be discussed.
+Please use [GitHub Issues](https://github.com/veyro404/VexoJumper/issues) for bug reports and suggestions. Include the app version, Windows version, reproduction steps and the exact error text. Logs are stored in `%LOCALAPPDATA%\VexoJumper\logs`; review them for private data before attaching them.
 
-## 👨‍💻 Developer
+## 👨‍💻 Project links
 
-Created by **[VEYRO404](https://github.com/veyro404)**
-
-- 🌐 Website: [Vexo Jumper](https://veyro404.github.io/VexoJumper/)
-- 📦 Releases: [GitHub Releases](https://github.com/veyro404/VexoJumper/releases)
-- 🐛 Support and bug reports: [GitHub Issues](https://github.com/veyro404/VexoJumper/issues)
+- Developer: [VEYRO404](https://github.com/veyro404)
+- Repository: [github.com/veyro404/VexoJumper](https://github.com/veyro404/VexoJumper)
+- Releases: [GitHub Releases](https://github.com/veyro404/VexoJumper/releases)
+- Website: [veyro404.github.io/VexoJumper](https://veyro404.github.io/VexoJumper/)
 
 ## 📄 License
 
-Until a `LICENSE` file is added to the repository, the project remains subject to the default copyright terms. If you intend to distribute it as an open-source project, choose an appropriate license and add its full text to the repository.
-
----
-
-<div align="center">
-
-**Vexo Jumper — Take control of your network, simply.**
-
-If you find this project useful, consider giving the repository a ⭐.
-
-<sub>Made with care by VEYRO404</sub>
-
-</div>
+No `LICENSE` file is included in this source package. Do not assume the project is open source or freely redistributable until an explicit project license is added. Third-party notices are listed in `docs/THIRD-PARTY-NOTICES.md`.
